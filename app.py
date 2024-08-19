@@ -17,6 +17,12 @@ def index():
                 classification = triangle.classify_by_sides(valor1, valor2, valor3)
                 return render_template('index.html', classification=classification)
             else:
-                return render_template('index.html', error='Valores do lado não formam um triângulo válido!')
+                return render_template('index.html', error='Valores de lado não formam um triângulo válido!')
+        else:
+            if triangle.validate_angles(valor1, valor2, valor3):
+                classification = triangle.classify_by_angles(valor1, valor2, valor3)
+                return render_template('index.html', classification=classification)
+            else:
+                return render_template('index.html', error='Valores de ângulo não formam um triângulo válido!')
         
     return render_template('index.html')
