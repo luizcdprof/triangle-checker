@@ -28,6 +28,7 @@
 
     {% if classification %}
         <h2>Classificação do triângulo: {{ classification }}</h2>
+        <img src="{{ url_for('static', filename=image)}}" alt="Triângulo Gerado">
     {% endif %}
 
     {% if error %}
